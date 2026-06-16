@@ -115,6 +115,10 @@ Lấy danh sách công việc phù hợp nhất cho CV có ID = 1:
 curl "http://localhost:8000/recommend/jobs/1?user_id=10"
 ```
 
+```text
+(.venv)% curl "http://localhost:8000/recommend/jobs/1?user_id=10"
+[{"job_id":9,"title":"Backend Engineer Intern","company":"TalentGraph","score":0.9991,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":17,"title":"Backend Engineer Intern","company":"DevPath","score":0.9988,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":25,"title":"Backend Engineer Intern","company":"DockerWorks","score":0.9988,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":33,"title":"Backend Engineer Intern","company":"StackMakers","score":0.9988,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":41,"title":"Backend Engineer Intern","company":"FeatureLab","score":0.9988,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":1,"title":"Backend Engineer Intern","company":"TechStart Labs","score":0.9987,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":49,"title":"Backend Engineer Intern","company":"TalentSpark","score":0.9987,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":57,"title":"Backend Engineer Intern","company":"JobVector","score":0.9987,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":27,"title":"Search and NLP Engineer Intern","company":"ModelOps","score":0.8823,"matched_skills":["Python","NLP","PostgreSQL"],"missing_skills":["Search","Ranking"],"reason":"3 required skills matched; the job is recent; missing skills: Search, Ranking"},{"job_id":19,"title":"Search and NLP Engineer Intern","company":"BackendForge","score":0.8614,"matched_skills":["Python","NLP","PostgreSQL"],"missing_skills":["Search","Ranking"],"reason":"3 required skills matched; the job is recent; missing skills: Search, Ranking"}]%    
+```
 ---
 
 ### Gửi Phản Hồi Hành Vi Người Dùng
@@ -129,6 +133,17 @@ curl -X POST http://localhost:8000/events/feedback \
     "job_id": 1,
     "event_type": "save"
   }'
+```
+
+```text
+(.venv)% curl -X POST http://localhost:8000/events/feedback \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": 10,
+    "job_id": 1,
+    "event_type": "save"
+  }'
+{"id":1,"user_id":10,"job_id":1,"event_type":"save","timestamp":"2026-06-16T08:21:58.185284Z"}%   
 ```
 
 Các loại sự kiện hỗ trợ:
