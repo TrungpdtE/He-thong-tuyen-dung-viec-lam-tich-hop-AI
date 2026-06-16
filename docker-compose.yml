@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ai_job_tracker_ai_engine_v2
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ai_job_tracker_ai_engine_v2"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg2://postgres:postgres@db:5432/ai_job_tracker_ai_engine_v2
+      MODEL_PATH: app/ml/model.pkl
+      TOP_K_JOBS: 10
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
