@@ -29,6 +29,17 @@ Hệ thống xếp hạng các công việc phù hợp với hồ sơ các bạn
 * Bộ kiểm thử bằng Pytest
 
 ---
+![Demo image](images/image1.png)
+
+![Demo image](images/image2.png)
+
+![Demo image](images/image3.png)
+
+![Demo image](images/image4.png)
+
+![Demo image](images/image5.png)
+
+![Demo image](images/image6.png)
 ---
 
 ## Tổng qua về kiến Trúc Hệ Thống
@@ -119,6 +130,8 @@ curl "http://localhost:8000/recommend/jobs/1?user_id=10"
 (.venv)% curl "http://localhost:8000/recommend/jobs/1?user_id=10"
 [{"job_id":9,"title":"Backend Engineer Intern","company":"TalentGraph","score":0.9991,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":17,"title":"Backend Engineer Intern","company":"DevPath","score":0.9988,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":25,"title":"Backend Engineer Intern","company":"DockerWorks","score":0.9988,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":33,"title":"Backend Engineer Intern","company":"StackMakers","score":0.9988,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":41,"title":"Backend Engineer Intern","company":"FeatureLab","score":0.9988,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":1,"title":"Backend Engineer Intern","company":"TechStart Labs","score":0.9987,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":49,"title":"Backend Engineer Intern","company":"TalentSpark","score":0.9987,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":57,"title":"Backend Engineer Intern","company":"JobVector","score":0.9987,"matched_skills":["Python","FastAPI","PostgreSQL","Docker","REST API"],"missing_skills":[],"reason":"resume text is semantically close to the job description; 5 required skills matched; the job is recent"},{"job_id":27,"title":"Search and NLP Engineer Intern","company":"ModelOps","score":0.8823,"matched_skills":["Python","NLP","PostgreSQL"],"missing_skills":["Search","Ranking"],"reason":"3 required skills matched; the job is recent; missing skills: Search, Ranking"},{"job_id":19,"title":"Search and NLP Engineer Intern","company":"BackendForge","score":0.8614,"matched_skills":["Python","NLP","PostgreSQL"],"missing_skills":["Search","Ranking"],"reason":"3 required skills matched; the job is recent; missing skills: Search, Ranking"}]%    
 ```
+
+![Demo image](images/image7.png)
 ---
 
 ### Gửi Phản Hồi Hành Vi Người Dùng
@@ -243,4 +256,3 @@ Mục tiêu là để tìm hiểu:
 * Learning To Rank
 * NLP Embeddings
 * User Behavior Analytics
-* AI Engineering
